@@ -25,7 +25,6 @@
 - (void)didLoadFromCCB
 {
     _physicsNode.collisionDelegate = self;
-    CCLOG(@"Physics collision delegate set");
     
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
