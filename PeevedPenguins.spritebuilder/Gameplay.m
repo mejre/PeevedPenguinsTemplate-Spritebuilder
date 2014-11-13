@@ -22,9 +22,10 @@
 }
 
 // is called when CCB file has completed loading
-- (void)didLoadFromCCB {
-    
+- (void)didLoadFromCCB
+{
     _physicsNode.collisionDelegate = self;
+    CCLOG(@"Physics collision delegate set");
     
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
@@ -79,7 +80,8 @@
     _mouseJointNode.position = touchLocation;
 }
 
-- (void)releaseCatapult {
+- (void)releaseCatapult
+{
     if (_mouseJoint != nil)
     {
         [_mouseJoint invalidate];
@@ -130,7 +132,8 @@
 //    [_contentNode runAction:follow];
 //}
 
-- (void)retry {
+- (void)retry
+{
     // reload this level
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
 }
